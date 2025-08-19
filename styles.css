@@ -1,0 +1,158 @@
+/* General setup */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Roboto", sans-serif; background: black; color: white; overflow-x: hidden; }
+section { height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative; }
+
+/* Background stars */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  animation: moveStars 180s linear infinite;
+  z-index: -1;
+}
+@keyframes moveStars { from { background-position: 0 0; } to { background-position: -10000px 5000px; } }
+
+/* Smoky text */
+.smoky-text { display: flex; gap: 10px; font-size: 4rem; cursor: pointer; }
+.second-line { margin-top: 20px; }
+.smoky-text li { list-style: none; transition: 2s; }
+.smoky-text:hover li { transform: rotate(45deg) translateY(-200px); opacity: 0; filter: blur(20px); }
+.smoky-text li:nth-child(1){ transition-delay: 0s; }
+.smoky-text li:nth-child(2){ transition-delay: .2s; }
+.smoky-text li:nth-child(3){ transition-delay: .4s; }
+.smoky-text li:nth-child(4){ transition-delay: .6s; }
+.smoky-text li:nth-child(5){ transition-delay: .8s; }
+
+/* Planets */
+.planet {
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+  color: white; font-size: 1.2rem; text-align: center;
+  position: absolute; opacity: 0; transform: translateX(-200%);
+  transition: transform 2s ease, opacity 2s ease;
+}
+.planet span { pointer-events: none; }
+
+/* Gradient spheres */
+.planet1 {
+  width: 150px; height: 150px;
+  background: radial-gradient(circle at 30% 30%, #03A696, #03658C);
+  box-shadow: inset -20px -20px 40px rgba(0,0,0,0.6), 0 0 40px #07F2F2;
+  top: 20%; z-index: 12;
+}
+.planet2 {
+  width: 70vw; height: 70vw;
+  background: radial-gradient(circle at 30% 30%, #011640, #380238);
+  box-shadow: inset -40px -40px 80px rgba(0,0,0,0.9), 0 0 80px #BF307F;
+}
+.planet3 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle at 30% 30%, #D911CB, #012840);
+  box-shadow: inset -30px -30px 60px rgba(0,0,0,0.7), 0 0 60px #F2EC99;
+  bottom: 15%; left: 10%;
+}
+#PLANETS.active .planet { opacity: 1; transform: translateX(0); }
+
+/* Wormhole */
+.wormhole {
+  width: 90vw; height: 80vh;
+  border-radius: 50%;
+  /*backdrop-filter: blur(30px);*/
+  border: 4px solid rgba(255,255,255,0.2);
+  display: flex; justify-content: center; align-items: center; flex-direction: column;
+  background-image: url("./images/wormhole.png");
+  background-position: center;
+  color: black; font-size: 1.5em;
+}
+.wormhole-buttons img { width: 100px; margin: 10px; cursor: pointer; }
+.wormhole-display img { max-width: 80%; max-height: auto; }
+
+/* Meteors */
+.meteor-container { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.meteor-container h2 { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; }
+.meteor {
+  position: absolute; top: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: #299C75; box-shadow: 0 0 15px white;
+  animation: fly linear infinite;
+}
+@keyframes fly { from { transform: translateX(-50px); } to { transform: translateX(110vw); } }
+
+/* OG */
+.og-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.og-image { width: 80vw; transform: translateY(100%); opacity: 0; transition: 2s ease; }
+.og-text { margin-top: 20px; opacity: 0; transition: 2s ease 1s; }
+#OG.active .og-image { transform: translateY(0); opacity: 1; }
+#OG.active .og-text { opacity: 1; }
+
+/* Spaceship Navbar */
+.spaceship-navbar { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; z-index: 100; }
+.spaceship { width: 6rem; animation: float 4s ease-in-out infinite; cursor: pointer; }
+@keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
+.dropdown { display: none; background: #042940; border-color: #DBF227; padding: 10px; border-radius: 10px; margin-top: 10px; }
+.dropdown a { display: block; color: white; margin: 5px 0; text-decoration: none; }
+.spaceship-navbar:hover .dropdown { display: block; }
+
+/* LEO Section Styles */
+#LEO {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.leo-overlay {
+  position: absolute;
+  inset: 0;
+  background: url("./images/leoconst.png") center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.leo-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+#countdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.time-box {
+  background: rgba(3,136,166,0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  min-width: 80px;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+.time-box small {
+  display: block;
+  font-size: 0.6em;
+  margin-top: 4px;
+  color: #a0e7ff;
+}
+
+.leo-facts {
+  text-align: left;
+  list-style: inside circle;
+  padding: 0;
+  margin-top: 1rem;
+}
+.leo-facts li {
+  margin: 0.6rem 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  background: rgba(0,0,40,0.4);
+  padding: 8px;
+  border-radius: 6px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Spaceship Navbar -->
+  <div class="spaceship-navbar">
+    <img src="./images/enemy1.png" alt="Spaceship" class="spaceship">
+    <div class="dropdown">
+      <a href="#HBDY">🎉Happy Birthday</a>
+      <a href="#PLANETS">🪐Planets</a>
+      <a href="#LEO">LEO</a>
+      <a href="#WORMHOLE">🌌Wormhole</a>
+      <a href="#METEOR">☄️Meteor</a>
+      <a href="#OG">👽 OG</a>
+    </div>
+  </div>
+
+  <!-- Background Stars -->
+  <div class="stars"></div>
+
+  <!-- Section 1: HAPPY BIRTHDAY -->
+  <section id="HBDY">
+    <ul class="smoky-text">
+      <li>H</li><li>A</li><li>P</li><li>P</li><li>Y</li>
+    </ul>
+    <ul class="smoky-text second-line">
+      <li>B</li><li>I</li><li>R</li><li>T</li><li>H</li><li>D</li><li>A</li><li>Y</li>
+    </ul>
+  </section>
+
+  <!-- Section 2: PLANETS -->
+  <section id="PLANETS">
+    <div class="planet planet1"><span>Hello Marcianitow!</span></div>
+    <div class="planet planet2"><span>Te deseo un cumpleños muy especial, que venga un año lleno de amor, salud, reconexion y muchas aventuras, conocer lugares magicos<br><p>Que sigas explorando, aprendiendo y dejando tu huella en este mundo</p></span></div>
+    <div class="planet planet3"><span>Que todos tus deseos se vuelvan realidad</span></div>
+  </section>
+
+  <section id="LEO">
+  <div class="leo-overlay"></div>
+  <div class="leo-content">
+    <h2>Time Traveling Under the Leo Constellation</h2>
+
+   <!--  <div id="countdown">
+      <div class="time-box"><span id="years">0</span><small>Years</small></div>
+      <div class="time-box"><span id="months">0</span><small>Months</small></div>
+      <div class="time-box"><span id="days">0</span><small>Days</small></div>
+      <div class="time-box"><span id="hours">0</span><small>Hours</small></div>
+      <div class="time-box"><span id="minutes">0</span><small>Minutes</small></div>
+      <div class="time-box"><span id="seconds">0</span><small>Seconds</small></div>
+    </div> -->
+
+    <h3>On This Day – August 18</h3>
+    <ul class="leo-facts">
+      
+      <li>🏭 1868 – Helium was discovered.</li>
+      <li>🌑 1877 – The Martian moon Phobos was discovered. </li>
+      <li>🚀 1903 – Karl Jatho flew a motorized glider—months before the Wright Brothers. </li>
+      <li>📚 1958 – Vladimir Nabokov’s controversial novel *Lolita* was first published in the U.S. </li>
+     
+    </ul>
+  </div>
+</section>
+
+  <!-- Section 3: WORMHOLE -->
+  <section id="WORMHOLE">
+    <div class="wormhole">
+      <p>Choose your path through the wormhole:</p>
+      <div class="wormhole-buttons">
+        <img src="./images/enemy2.png" alt="Choice 1" onclick="selectPortal('./images/SpaceshipMarcianitows.png')">
+        <img src="./images/enemy3.png" alt="Choice 2" onclick="selectPortal('./images/alienkiss.png')">
+        <img src="./images/enemy4.png" alt="Choice 3" onclick="selectPortal('./images/paranga.png')">
+      </div>
+      <div class="wormhole-display"></div>
+    </div>
+  </section>
+
+  <!-- Section 4: METEORS -->
+  <section id="METEOR">
+    <div class="meteor-container">
+      <h2>We can survive anything</h2> 
+     
+    </div>
+  </section>
+
+  <!-- Section 5: OG -->
+  <section id="OG">
+    <div class="og-container">      
+      <h1 class="og-text">The legendary OG Marcianitowww!</h1>
+      <img src="./images/marOG.png" alt="OG" class="og-image">
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
